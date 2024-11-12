@@ -1,10 +1,11 @@
 import React from 'react'
 import MissionIcon from './Icons/MissionIcon'
 import ExploreIcon from './Icons/ExploreIcon'
+import Image from 'next/image'
 
 const Mission = () => {
     return (
-        <div className='w-full flex flex-col h-[945px] items-center justify-end'>
+        <div className='w-full flex flex-row h-[945px] space-x-10 items-center justify-end'>
             <div className='h-[805.25px] flex flex-col justify-evenly'>
                 <MissionIcon />
                 <p className='w-[628px] leading-none text-white text-[56px] font-geist font-bold'><span className='text-opaqueGrey'>MY MISSION IS <br /></span> TO BUILD INNOVATIVE SOLUTIONS THAT IMPROVE LIVES.</p>
@@ -14,6 +15,12 @@ const Mission = () => {
                     <p className='text-white text-xl font-geist  underline underline-offset-3'>Explore my journey</p>
                 </div>
             </div>
+            <Image
+                src="https://res.cloudinary.com/debiu7z1b/image/upload/v1731423792/Frame_81_bkqsh4.webp"
+                alt="Mission Image"
+                width={626}
+                height={805}
+            />
         </div>
     )
 }
