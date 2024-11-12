@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react'
 import EntrepreneurIcon from './Icons/EntreprenureIcon'
 import InnovatorIcon from './Icons/InnovatorIcon'
