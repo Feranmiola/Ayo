@@ -1,36 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 
 .navbar {
   overflow: hidden;
   z-index: 8888;
   position: fixed;
-  /* Set the navbar to fixed position */
   top: 0;
-  /* Position the navbar at the top of the page */
   width: 100%;
-  /* Full width */
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 html {
   @apply scroll-smooth;
   scrollbar-width: none;
-  /* For Firefox */
   -ms-overflow-style: none;
-  /* For Internet Explorer and Edge */
 }
 
 
 
-
-/* Only apply custom scrollbar on large screens */
 @media screen and (min-width: 1024px) {
 
-  /* Hide default scrollbar */
   html {
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -40,7 +31,6 @@ html {
     display: none;
   }
 
-  /* Custom scrollbar container */
   body {
     position: relative;
   }
@@ -57,20 +47,17 @@ html {
     pointer-events: none;
   }
 
-  /* Custom scrollbar thumb */
   body::after {
     background: #1A44DD;
-    /* Updated to the requested color */
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
   }
 
-  /* Show scrollbar when scrolling */
+
   body.is-scrolling::after {
     opacity: 1;
   }
 
-  /* Adjust scrollbar position based on scroll percentage */
   body::after {
     top: var(--scroll-top, 0px);
     height: var(--scrollbar-height, 20%);
@@ -145,13 +132,7 @@ html {
   }
 }
 
-@layer base {
-
-
-  body {
-    @apply bg-background text-foreground;
-  }
-}
+@layer base {}
 
 @layer components {
   .shad-input-width-error-auth {
