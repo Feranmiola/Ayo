@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         bricolage: ['Bricolage Grotesque', 'sans-serif'],
+        geist: ['Geist', 'sans-serif'],
       },
       colors: {
         'darkGray': '#131313',

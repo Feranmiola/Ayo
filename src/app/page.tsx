@@ -3,6 +3,7 @@
 'use client'
 import { useEffect } from "react";
 import Image from "next/image";
+import Entrepreneur from "@/Components/Entreprenure";
 
 export default function Home() {
 
@@ -55,6 +56,8 @@ export default function Home() {
         </div>
         <p className="text-[181.52px] font-bricolage text-white font-bold">Ayo</p>
       </div>
+
+      <Entrepreneur />
 
     </div>
   );
