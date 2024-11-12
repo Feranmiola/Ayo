@@ -1,13 +1,22 @@
+'use client'
 import Image from 'next/image'
 import React from 'react'
 import EntrepreneurIcon from './Icons/EntreprenureIcon'
 import InnovatorIcon from './Icons/InnovatorIcon'
 import EnthusiastIcon from './Icons/EnthusiastIcon'
-import WhiteDot from './Icons/WhiteDot'
+import Arrow from './Icons/Arrow'
 
 const Footer = () => {
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    };
+
     return (
-        <div className='h-[995px] w-full flex flex-col space-y-10 items-center justify-center bg-darkGray'>
+        <div className='h-[595px] relative w-full flex flex-col space-y-10 items-center justify-center bg-darkGray'>
+            <div onClick={scrollToTop} className='absolute left-[30rem] top-8 w-[189px] h-[40px] rounded-[12px] bg-[#262626] flex items-center border-[1px] border-transparent hover:border-opaqueGrey transition ease-in-out cursor-pointer justify-center flex-row space-x-2'>
+                <Arrow />
+                <p className='text-opaqueGrey font-geist text-base'>Click to scroll to top</p>
+            </div>
             <div className='w-full border-b-[1px] border-b-[#979797] border-opacity-30 flex py-10 items-center justify-center'>
                 <div className='h-[360px] flex items-start justify-center flex-col'>
                     <div className='flex flex-row items-center space-x-5'>
