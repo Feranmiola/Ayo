@@ -41,8 +41,8 @@ export default function Home() {
   return (
     <div className="w-screen h-screen flex flex-col bg-darkGray">
 
-      <div className="flex flex-row items-center space-x-5 justify-center py-20">
-        <p className="text-[181.52px] opacity-50 font-bricolage text-white font-bold">Hi i'm</p>
+      <div className="flex flex-row items-center space-x-10 justify-center py-20">
+        <p className="text-[181.52px] opacity-50 font-bricolage text-white font-bold">Hi, i'm</p>
         <div className="h-[142.95px] w-[142.95px] rounded-[27.23px]">
           <Image
             src="https://res.cloudinary.com/debiu7z1b/image/upload/v1731414210/image_904_1_hg5p3h.webp"
