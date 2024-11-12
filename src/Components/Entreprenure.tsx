@@ -20,9 +20,8 @@ const Entrepreneur = () => {
                     <p className='font-geist font-bold leading-none text-[120px] text-white'>ENTHUSIAST</p>
                     <EnthusiastIcon />
                 </div>
-
             </div>
-
+            <p className='w-[947px] text-center text-xl text-[#757575]  font-geist'>A passionate entrepreneur and tech innovator with a decade of experience across multiple industries, including web3, ClimateTech, blockchain, and tech development. I've built, scaled, and sold various digital products that tackle real-world problems. Welcome to my digital space where I share my thoughts, projects, and journey.</p>
         </div>
     )
 }
