@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect, useCallback, useRef } from 'react'
+import React, { useState, useCallback, useRef } from 'react'
 import { debounce } from 'lodash'
 
 const DEBOUNCE_DELAY = 5 // ms
