@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        bricolage: ['Bricolage Grotesque', 'sans-serif'],
+      },
       colors: {
         'darkGray': '#131313',
         background: "var(--background)",
