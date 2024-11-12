@@ -1,13 +1,24 @@
 import React from 'react'
 import EntrepreneurIcon from './Icons/EntreprenureIcon'
+import InnovatorIcon from './Icons/InnovatorIcon'
+import EnthusiastIcon from './Icons/EnthusiastIcon'
 
 const Entrepreneur = () => {
     return (
         <div className='w-full h-[805px] flex flex-col space-y-10 items-center justify-center'>
-            <div className='flex flex-col items-center justify-between h-[336px]'>
+            <div className='flex flex-col items-center justify-center'>
                 <div className='flex flex-row space-x-1 items-center'>
-                    <p className='font-geist font-bold text-[100px] text-white'>ENTREPRENEUR</p>
+                    <p className='font-geist font-bold leading-none text-[120px] text-white'>ENTREPRENEUR</p>
                     <EntrepreneurIcon />
+                </div>
+                <div className='flex flex-row space-x-1 items-center'>
+                    <p className='font-geist font-bold leading-none text-[120px] text-white'>INNOVATOR</p>
+                    <InnovatorIcon />
+                    <p className='font-geist font-bold leading-none text-[120px] text-white'>WEB3</p>
+                </div>
+                <div className='flex flex-row space-x-1 items-center'>
+                    <p className='font-geist font-bold leading-none text-[120px] text-white'>ENTHUSIAST</p>
+                    <EnthusiastIcon />
                 </div>
 
             </div>

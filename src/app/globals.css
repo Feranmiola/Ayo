@@ -50,7 +50,7 @@ html {
   }
 
   body::after {
-    background: #1A44DD;
+    background: #B4F405;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
   }

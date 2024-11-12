@@ -40,7 +40,7 @@ export default function Home() {
 
 
   return (
-    <div className="w-screen h-screen flex flex-col bg-darkGray">
+    <div className="w-screen h-max flex flex-col bg-darkGray">
 
       <div className="flex flex-row items-center space-x-10 justify-center py-20">
         <p className="text-[181.52px] opacity-50 font-bricolage text-white font-bold">Hi, i'm</p>
