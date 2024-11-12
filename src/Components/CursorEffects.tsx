@@ -8,7 +8,6 @@ const FADE_OUT_DELAY = 1000 // ms
 
 export default function SimplifiedFadeOutCursorEffects() {
     const cursorRef = useRef<HTMLDivElement>(null)
-    const [isHighlighting, setIsHighlighting] = useState(false)
     const [isActive, setIsActive] = useState(true)
     const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
@@ -43,27 +42,6 @@ export default function SimplifiedFadeOutCursorEffects() {
         [debouncedUpdateCursor]
     )
 
-    const handleMouseDown = useCallback(() => {
-        setIsHighlighting(true)
-    }, [])
-
-    const handleMouseUp = useCallback(() => {
-        setIsHighlighting(false)
-    }, [])
-
-    useEffect(() => {
-        window.addEventListener('mousemove', handleMouseMove)
-        window.addEventListener('mousedown', handleMouseDown)
-        window.addEventListener('mouseup', handleMouseUp)
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove)
-            window.removeEventListener('mousedown', handleMouseDown)
-            window.removeEventListener('mouseup', handleMouseUp)
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current)
-            }
-        }
-    }, [handleMouseMove, handleMouseDown, handleMouseUp])
 
     return (
         <div className="fixed inset-0 pointer-events-none overflow-hidden">
