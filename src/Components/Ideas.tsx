@@ -70,7 +70,7 @@ const Ideas = () => {
                 </div> */}
 
                 <ScrollArea className="w-full" style={{ paddingBottom: '2rem' }}>
-                    <div className='flex -space-x-2 pb-8 ml-[30rem]'>
+                    <div className='flex -space-x-2 pb-8 px-20 '>
                         {blogItems.map((item, index) => (
                             <div
                                 key={index}
