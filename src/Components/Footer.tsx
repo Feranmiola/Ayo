@@ -12,8 +12,8 @@ const Footer = () => {
     };
 
     return (
-        <div className='h-[595px] relative w-full flex flex-col space-y-10 items-center justify-center bg-darkGray'>
-            <div onClick={scrollToTop} className='absolute left-[30rem] top-8 w-[189px] h-[40px] rounded-[12px] bg-[#262626] flex items-center border-[1px] border-transparent hover:border-opaqueGrey transition ease-in-out cursor-pointer justify-center flex-row space-x-2'>
+        <div className='h-[995px] pt-[10rem] relative w-full flex flex-col space-y-10 items-center justify-center bg-darkGray'>
+            <div onClick={scrollToTop} className='absolute left-[30rem] top-[20rem] w-[189px] h-[40px] rounded-[12px] bg-[#262626] flex items-center border-[1px] border-transparent hover:border-opaqueGrey transition ease-in-out cursor-pointer justify-center flex-row space-x-2'>
                 <Arrow />
                 <p className='text-opaqueGrey font-geist text-base'>Click to scroll to top</p>
             </div>
