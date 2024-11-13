@@ -6,8 +6,10 @@ import EntreprenureshipBadgeIcon from './Icons/EntreprenureshipBadgeIcon'
 import BulbIconBadge from './Icons/BulbIconBadge'
 import Web3IconBadge from './Icons/Web3IconBadge'
 import { ScrollArea, ScrollBar } from './ui/scroll-area'
+import { useRouter } from 'next-nprogress-bar'
 
 const Ideas = () => {
+    const router = useRouter()
     const blogItems = [
         { icon: EntreprenureshipBadgeIcon, label: "Entrepreneurship", color: "#E68A11", bgColor: "#EEA54640", zIndex: 50, marginTop: 0, left: 0 },
         { icon: BulbIconBadge, label: "Innovation", color: "#0AC532", bgColor: "#46D36433", zIndex: 40, marginTop: 2, left: -20 },
@@ -98,7 +100,7 @@ const Ideas = () => {
                     <ScrollBar orientation="horizontal" />
                 </ScrollArea>
             </div>
-            <div className='w-[385px] h-[67px] rounded-[200px] border-[1px] border-[#262626] hover:scale-110 transition ease-in-out cursor-pointer flex flex-row space-x-1 items-center justify-center'>
+            <div onClick={() => router.push('/blog')} className='w-[385px] h-[67px] rounded-[200px] border-[1px] border-[#262626] hover:scale-110 transition ease-in-out cursor-pointer flex flex-row space-x-1 items-center justify-center'>
                 <BookIconSmall />
                 <p className='text-[36px] text-[#262626] font-geist'>Read more articles</p>
 
