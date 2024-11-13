@@ -6,6 +6,7 @@ import Image from "next/image";
 import Entrepreneur from "@/Components/Entreprenure";
 import Mission from "@/Components/Mission";
 import Connect from "@/Components/Connect";
+import Ideas from "@/Components/Ideas";
 
 export default function Home() {
 
@@ -61,6 +62,7 @@ export default function Home() {
 
       <Entrepreneur />
       <Mission />
+      <Ideas />
       <Connect />
 
     </div>
