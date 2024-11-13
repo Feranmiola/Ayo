@@ -90,7 +90,7 @@ export default function Blog() {
 
                 <div className="flex flex-col space-y-5 items-center justify-center w-full">
                     <div className="w-[1235px] flex items-center justify-between flex-row">
-                        <div className="w-[401px] h-[310px] border-[1px] cursor-pointer hover:border-white transition ease-in-out border-[#262626] bg-[#131313] rounded-[17px] flex items-center justify-center">
+                        <div onClick={() => router.push('/blog/Blog1')} className="w-[401px] h-[310px] border-[1px] cursor-pointer hover:border-white transition ease-in-out border-[#262626] bg-[#131313] rounded-[17px] flex items-center justify-center">
                             <div className="h-[238px] w-[353px] flex flex-col justify-between">
                                 <div className='w-[154px] h-[29px] border-[1px] border-[#E68A11] bg-[#EEA54640] rounded-[24px] flex flex-row items-center justify-center space-x-1'>
                                     <EntreprenureshipBadgeIcon />
