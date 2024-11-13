@@ -4,6 +4,7 @@ import BlockIcon from "@/Components/Icons/BlockIcon";
 import BulbIcon from "@/Components/Icons/BulbIcon";
 import EntreprenureshipWHite from "@/Components/Icons/EntreprenureshipWHite";
 import PencilIcon from "@/Components/Icons/PencilIcon";
+import Search from "@/Components/Icons/Search";
 import { useState } from "react";
 
 export default function Blog() {
@@ -55,9 +56,18 @@ export default function Blog() {
                                 <BlockIcon colour='white' />
                             )}
                         </div>
-                        Entrepreneurship
+                        Web3
                     </div>
 
+                    <div className="flex flex-row items-center focus-within:border-b-white transition ease-in-out space-x-2 border-b-[1px] border-b-transparent">
+                        <Search />
+                        <input
+                            type="text"
+                            className="text-white outline-none border-none bg-transparent text-base font-geist placeholder:text-white placeholder:opacity-70"
+                            placeholder="Search"
+                        />
+
+                    </div>
                 </div>
 
             </div>
