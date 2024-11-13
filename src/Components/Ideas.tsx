@@ -2,6 +2,7 @@ import React from 'react'
 import BookIcon from './Icons/BookIcon'
 import BookIconSmall from './Icons/BookIconSmall'
 import RightArrow from './Icons/RightArrow'
+import EntreprenureshipBadgeIcon from './Icons/EntreprenureshipBadgeIcon'
 
 const Ideas = () => {
     return (
@@ -20,6 +21,21 @@ const Ideas = () => {
                         <RightArrow />
                         <p className='text-[#262626] text-2xl font-geist'>to industry observations</p>
                     </div>
+                </div>
+
+                <div className='w-full flex flex-row space-y-2'>
+                    <div className='w-[600px] h-[267px] rounded-[12px] cursor-pointer border-[1px] border-[#262626] flex flex-col justify-center items-center hover:scale-95 transition ease-in-out'>
+                        <div className='flex flex-col h-[195px] justify-between px-5'>
+                            <div className='w-[154px] h-[29px] border-[1px] border-[#E68A11] bg-[#EEA54640] rounded-[24px] flex flex-row items-center justify-center space-x-1'>
+                                <EntreprenureshipBadgeIcon />
+                                <p className='text-sm text-[#E68A11] font-geist'>Entrepreneurship</p>
+                            </div>
+
+                            <p className='text-[36px] text-[#080808] leading-none'>How Blockchain is Changing the Game for ClimateTech Solutions</p>
+                            <p className='text-base text-[#080808] font-geist leading-none'>Custom online stores with user-friendly interfaces and seamless payment integration.</p>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
