@@ -2,15 +2,33 @@
 // @ts-nocheck
 'use client'
 
-import { useEffect } from "react";
+
+import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Entrepreneur from "@/Components/Entreprenure";
 import Mission from "@/Components/Mission";
 import Connect from "@/Components/Connect";
 import Ideas from "@/Components/Ideas";
 
 export default function Home() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  const fadeInVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 }
+  };
+
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -42,24 +60,34 @@ export default function Home() {
     };
   }, []);
 
-  const fadeInVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 }
-  };
-
   return (
-    <div className="w-screen h-max flex flex-col bg-darkGray">
+    <motion.div
+      ref={containerRef}
+      className="w-screen min-h-screen flex flex-col bg-darkGray"
+    >
       <motion.div
-        className="w-full h-full flex flex-col "
+        className="w-full h-full flex flex-col"
         initial="hidden"
         animate="visible"
         variants={fadeInVariants}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-
         <motion.div className="flex flex-row items-center space-x-10 justify-center py-[10rem]">
           <p className="text-[181.52px] opacity-50 font-bricolage text-white font-bold">Hi, i'm</p>
-          <div className="h-[142.95px] w-[142.95px] rounded-[27.23px]">
+          <motion.div
+            className="h-[142.95px] w-[142.95px] rounded-[27.23px] cursor-grab active:cursor-grabbing"
+            drag
+            dragConstraints={{
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+            }}
+            dragElastic={0.05}
+            dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+            whileDrag={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <Image
               src="https://res.cloudinary.com/debiu7z1b/image/upload/v1731414210/image_904_1_hg5p3h.webp"
               alt="Ayo's profile picture"
@@ -68,7 +96,7 @@ export default function Home() {
               height={142.95}
               className="rounded-[27.23px]"
             />
-          </div>
+          </motion.div>
           <p className="text-[181.52px] font-bricolage text-white font-bold">Ayo</p>
         </motion.div>
 
@@ -77,6 +105,6 @@ export default function Home() {
         <Ideas />
         <Connect />
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
