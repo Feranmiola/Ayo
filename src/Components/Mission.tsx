@@ -29,19 +29,6 @@ export default function Mission() {
         },
     }
 
-    // New variant specifically for the image animation from the right
-    const imageVariants = {
-        hidden: { opacity: 0, x: 100 }, // Start from 100px to the right
-        visible: {
-            opacity: 1,
-            x: 0,
-            transition: {
-                duration: 0.8,
-                ease: "easeOut",
-            },
-        },
-    }
-
     return (
         <div className='h-screen sticky top-0'>
             <motion.div
@@ -76,7 +63,7 @@ export default function Mission() {
                     </motion.div>
                 </div>
                 <motion.div
-                    variants={imageVariants} // Apply the image-specific variant here
+                    variants={itemVariants}
                 >
                     <Image
                         src="https://res.cloudinary.com/debiu7z1b/image/upload/v1731423792/Frame_81_bkqsh4.webp"
