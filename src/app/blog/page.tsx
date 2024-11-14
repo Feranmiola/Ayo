@@ -125,7 +125,7 @@ export default function Blog() {
                     </motion.div>
                 </motion.div>
 
-                <motion.div className="flex flex-col space-y-5 items-center justify-center w-full" variants={itemVariants}>
+                <motion.div className="flex flex-col space-y-5 pb-10 items-center justify-center w-full" variants={itemVariants}>
                     {[0, 1].map((row) => (
                         <motion.div key={row} className="w-[1235px] flex items-center justify-between flex-row" variants={itemVariants}>
                             {[
@@ -155,8 +155,6 @@ export default function Blog() {
                     ))}
                 </motion.div>
             </motion.div>
-
-            <Connect />
         </motion.div>
     )
 }
