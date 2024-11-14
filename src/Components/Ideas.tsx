@@ -45,7 +45,7 @@ const Ideas = () => {
 
     return (
         <motion.div
-            className='h-[1377px] w-full bg-white flex flex-col items-center justify-between py-20'
+            className='h-[1377px] w-full bg-white z-30 flex flex-col items-center justify-between py-20'
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -122,6 +122,7 @@ const Ideas = () => {
                 <p className='text-[36px] text-[#262626] font-geist'>Read more articles</p>
             </motion.div>
         </motion.div>
+
     )
 }
 

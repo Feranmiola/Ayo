@@ -8,7 +8,7 @@ import Image from "next/image";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Entrepreneur from "@/Components/Entreprenure";
 import Mission from "@/Components/Mission";
-import Connect from "@/Components/Connect";
+
 import Ideas from "@/Components/Ideas";
 
 export default function Home() {
@@ -103,7 +103,6 @@ export default function Home() {
         <Entrepreneur />
         <Mission />
         <Ideas />
-        <Connect />
       </motion.div>
     </motion.div>
   );
