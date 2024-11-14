@@ -51,11 +51,11 @@ export default function Footer() {
     }
 
     return (
-        <div className='min-h-screen flex flex-col'>
+        <div className='flex flex-col'>
             <Connect />
 
             <motion.div
-                className='h-[995px] z-40 pt-[10rem] relative w-full flex flex-col space-y-10 items-center justify-center bg-darkGray'
+                className='h-[995px] border-t-[1px] border-t-[#979797] border-opacity-50 z-40 pt-[10rem] relative w-full flex flex-col space-y-10 items-center justify-center bg-darkGray'
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"

@@ -32,7 +32,7 @@ export default function Mission() {
     return (
         <div className='h-screen sticky top-0'>
             <motion.div
-                className='w-full flex flex-row h-[945px] space-x-10 items-center justify-end'
+                className='w-full flex flex-row h-full space-x-10 items-center justify-end'
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"

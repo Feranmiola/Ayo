@@ -191,7 +191,7 @@ export default function BlogPage() {
                             </motion.div>
                         ))}
                     </motion.div>
-                    <ScrollBar orientation="horizontal" />
+                    <ScrollBar orientation="horizontal" className=' opacity-0' />
                 </ScrollArea>
             </motion.div>
         </motion.div>

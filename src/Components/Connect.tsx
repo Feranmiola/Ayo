@@ -72,9 +72,9 @@ const Connect = () => {
     }
 
     return (
-        <div className='h-screen sticky top-0 z-30'>
+        <div className='h-screen sticky top-0 z-40'>
             <motion.div
-                className='w-full h-[871px] bg-[#131313] flex flex-col items-center justify-center'
+                className='w-full h-full bg-[#131313] flex flex-col items-center justify-center'
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
