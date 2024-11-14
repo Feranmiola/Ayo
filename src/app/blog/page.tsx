@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Connect from "@/Components/Connect";
 import BlockIcon from "@/Components/Icons/BlockIcon";
 import BulbIcon from "@/Components/Icons/BulbIcon";
 import BulbIconBadge from "@/Components/Icons/BulbIconBadge";
