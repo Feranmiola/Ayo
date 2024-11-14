@@ -1,3 +1,4 @@
+// Ideas Component
 'use client'
 
 import React from 'react'
@@ -44,8 +45,7 @@ const Ideas = () => {
     }
 
     return (
-
-        <div className='h-screen bg-white sticky top-0 z-30'>
+        <div className='h-screen bg-white sticky top-0 z-10'>
             <motion.div
                 className='h-screen w-full bg-white flex flex-col items-center justify-center py-20'
                 variants={containerVariants}

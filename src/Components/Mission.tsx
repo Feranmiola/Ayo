@@ -1,3 +1,4 @@
+// Mission Component
 'use client'
 
 import React from 'react'
@@ -5,6 +6,7 @@ import { motion } from 'framer-motion'
 import MissionIcon from './Icons/MissionIcon'
 import ExploreIcon from './Icons/ExploreIcon'
 import Image from 'next/image'
+import Ideas from './Ideas'
 
 export default function Mission() {
     const containerVariants = {
@@ -30,7 +32,8 @@ export default function Mission() {
     }
 
     return (
-        <div className='h-screen sticky top-0'>
+
+        < div className='h-screen inset-0 sticky top-0 z-0' >
             <motion.div
                 className='w-full flex flex-row h-full space-x-10 items-center justify-end'
                 variants={containerVariants}
@@ -73,6 +76,6 @@ export default function Mission() {
                     />
                 </motion.div>
             </motion.div>
-        </div>
+        </div >
     )
 }

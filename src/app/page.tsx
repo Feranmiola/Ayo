@@ -1,78 +1,83 @@
-/* eslint-disable */
-// @ts-nocheck
 'use client'
 
+import { useEffect, useRef } from "react"
+import Image from "next/image"
+import { motion, useScroll } from "framer-motion"
+import Entrepreneur from "@/Components/Entreprenure"
+import Mission from "@/Components/Mission"
+import Ideas from "@/Components/Ideas"
+import Footer from "@/Components/Footer"
+import { useSticky } from "@/Components/UseSticky"
 
-import { useEffect, useRef } from "react";
-import Image from "next/image";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import Entrepreneur from "@/Components/Entreprenure";
-import Mission from "@/Components/Mission";
-
-import Ideas from "@/Components/Ideas";
 
 export default function Home() {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+  const [missionRef, isMissionSticky] = useSticky()
+  const [ideasRef, isIdeasSticky] = useSticky()
+  const containerRef = useRef(null)
 
   const fadeInVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 }
-  };
+  }
+
+
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined") return
 
-    let scrollTimer = 0;
+    let scrollTimer = 0
+    let currentScrollPosition = 0
+    let targetScrollPosition = 0
+    let animationFrameId: number | null = null
+
     function updateScrollbar() {
-      const scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-      const scrollbarHeight = (window.innerHeight / document.documentElement.scrollHeight) * window.innerHeight;
-      const scrollTop = scrollPercentage * (window.innerHeight - scrollbarHeight);
+      const scrollPercentage = targetScrollPosition / (document.documentElement.scrollHeight - window.innerHeight)
+      const scrollbarHeight = (window.innerHeight / document.documentElement.scrollHeight) * window.innerHeight
+      const scrollTop = scrollPercentage * (window.innerHeight - scrollbarHeight)
 
-      document.body.style.setProperty('--scroll-top', `${scrollTop}px`);
-      document.body.style.setProperty('--scrollbar-height', `${scrollbarHeight}px`);
+      document.body.style.setProperty('--scroll-top', `${scrollTop}px`)
+      document.body.style.setProperty('--scrollbar-height', `${scrollbarHeight}px`)
 
-      document.body.classList.add('is-scrolling');
+      document.body.classList.add('is-scrolling')
 
-      clearTimeout(scrollTimer);
+      clearTimeout(scrollTimer)
       scrollTimer = setTimeout(() => {
-        document.body.classList.remove('is-scrolling');
-      }, 1000);
+        document.body.classList.remove('is-scrolling')
+      }, 1000) as unknown as number
     }
 
-    window.addEventListener('scroll', updateScrollbar);
-    window.addEventListener('resize', updateScrollbar);
+    function smoothScroll() {
+      currentScrollPosition += (targetScrollPosition - currentScrollPosition) * 0.1
+      if (Math.abs(targetScrollPosition - currentScrollPosition) < 1) {
+        currentScrollPosition = targetScrollPosition
+        if (animationFrameId) cancelAnimationFrame(animationFrameId)
+      } else {
+        animationFrameId = requestAnimationFrame(smoothScroll)
+      }
+      window.scrollTo(0, currentScrollPosition)
+      updateScrollbar()
+    }
 
-    updateScrollbar();
 
-    return () => {
-      window.removeEventListener('scroll', updateScrollbar);
-      window.removeEventListener('resize', updateScrollbar);
-    };
-  }, []);
+
+
+    window.addEventListener('resize', updateScrollbar)
+
+    updateScrollbar()
+  }, [])
 
   return (
-    <motion.div
-      ref={containerRef}
-      className="w-screen min-h-screen flex flex-col bg-darkGray"
-    >
+    <div className="relative w-screen bg-darkGray">
+
       <motion.div
-        className="w-full h-full flex flex-col"
+        className="w-full"
         initial="hidden"
         animate="visible"
         variants={fadeInVariants}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <motion.div className="flex flex-row items-center space-x-10 justify-center py-[10rem]">
+        {/* Hero Section */}
+        <div className="flex flex-row h-screen items-center space-x-10 justify-center py-[10rem]">
           <p className="text-[181.52px] opacity-50 font-bricolage text-white font-bold">Hi, i'm</p>
           <motion.div
             className="h-[142.95px] w-[142.95px] rounded-[27.23px] cursor-grab active:cursor-grabbing"
@@ -98,12 +103,20 @@ export default function Home() {
             />
           </motion.div>
           <p className="text-[181.52px] font-bricolage text-white font-bold">Ayo</p>
-        </motion.div>
+        </div>
 
         <Entrepreneur />
-        <Mission />
-        <Ideas />
+
+        <div ref={missionRef} className={`h-screen ${isMissionSticky ? 'sticky top-0 z-10' : ''}`}>
+          <Mission />
+        </div>
+
+        <div ref={ideasRef} className={`h-screen ${isIdeasSticky ? 'sticky top-0 z-20' : ''}`}>
+          <Ideas />
+        </div>
+
+        <Footer />
       </motion.div>
-    </motion.div>
-  );
+    </div>
+  )
 }

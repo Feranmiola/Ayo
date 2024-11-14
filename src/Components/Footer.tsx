@@ -51,11 +51,11 @@ export default function Footer() {
     }
 
     return (
-        <div className='flex flex-col'>
+        <div className='flex relative flex-col'>
             <Connect />
 
             <motion.div
-                className='h-[995px] border-t-[1px] border-t-[#979797] border-opacity-50 z-40 pt-[10rem] relative w-full flex flex-col space-y-10 items-center justify-center bg-darkGray'
+                className='h-screen border-t-[1px] border-t-[#979797] border-opacity-50 z-40 pt-[10rem] relative w-full flex flex-col space-y-10 items-center justify-center bg-darkGray'
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
@@ -63,7 +63,7 @@ export default function Footer() {
             >
                 <motion.div
                     onClick={scrollToTop}
-                    className='absolute left-[30rem] top-[20rem] w-[189px] h-[40px] rounded-[12px] bg-[#262626] flex items-center border-[1px] border-transparent hover:border-opaqueGrey transition ease-in-out cursor-pointer justify-center flex-row space-x-2'
+                    className='absolute left-[30rem] top-[14rem] w-[189px] h-[40px] rounded-[12px] bg-[#262626] flex items-center border-[1px] border-transparent hover:border-opaqueGrey transition ease-in-out cursor-pointer justify-center flex-row space-x-2'
                     variants={itemVariants}
                     whileHover={{
                         scale: 1.05,
