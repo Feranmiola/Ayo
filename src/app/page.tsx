@@ -79,33 +79,38 @@ export default function Home() {
         {/* Hero Section */}
         <div className="flex flex-row h-screen items-center space-x-10 justify-center py-[10rem]">
           <p className="text-[181.52px] opacity-50 font-bricolage text-white font-bold">Hi, i'm</p>
-          <motion.div
-            className="h-[142.95px] w-[142.95px] rounded-[27.23px] cursor-grab active:cursor-grabbing"
-            drag
-            dragConstraints={{
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-            }}
-            dragElastic={0.05}
-            dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-            whileDrag={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <div className="relative group">
-              <Image
-                src="https://res.cloudinary.com/debiu7z1b/image/upload/v1731661994/fimage_904_oxgxon.webp"
-                alt="Ayo's profile picture"
-                objectFit="cover"
-                width={142.95}
-                height={142.95}
-                className="rounded-[27.23px] filter grayscale transition-all duration-500 group-hover:grayscale-0"
-              />
+          <div className="flex relative flex-row items-center">
+            <div className="absolute flex items-center justify-center top-0 right-[16rem] h-[40px] w-[97px] rounded-[12px] bg-[#262626] text-[#B4F405] font-geist text-base">
+              /aah-yoh/
             </div>
-          </motion.div>
+            <motion.div
+              className="h-[142.95px] w-[142.95px] rounded-[27.23px] cursor-grab active:cursor-grabbing"
+              drag
+              dragConstraints={{
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+              }}
+              dragElastic={0.05}
+              dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+              whileDrag={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div className="relative group">
+                <Image
+                  src="https://res.cloudinary.com/debiu7z1b/image/upload/v1731661994/fimage_904_oxgxon.webp"
+                  alt="Ayo's profile picture"
+                  objectFit="cover"
+                  width={142.95}
+                  height={142.95}
+                  className="rounded-[27.23px] filter grayscale transition-all duration-500 group-hover:grayscale-0 hover:border-white border-[1px] border-transparent "
+                />
+              </div>
+            </motion.div>
 
-          <p className="text-[181.52px] font-bricolage text-white font-bold">Ayo</p>
+            <p className="text-[181.52px] pl-10 font-bricolage text-white font-bold">Ayo</p>
+          </div>
         </div>
 
         <Entrepreneur />

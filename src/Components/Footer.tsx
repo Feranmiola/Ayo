@@ -80,18 +80,18 @@ export default function Footer() {
                             <motion.div
                                 className="h-[104px] w-[104px] rounded-[27.23px]"
                                 whileHover={{
-                                    scale: 1.1,
+                                    scale: 1.3,
                                     rotate: 5,
                                     transition: { type: "spring", stiffness: 300, damping: 10 },
                                 }}
                             >
                                 <Image
-                                    src="https://res.cloudinary.com/debiu7z1b/image/upload/v1731414210/image_904_1_hg5p3h.webp"
+                                    src="https://res.cloudinary.com/debiu7z1b/image/upload/v1731661994/fimage_904_oxgxon.webp"
                                     alt="Ayo's profile picture"
                                     objectFit="cover"
                                     width={104}
                                     height={104}
-                                    className="rounded-[27.23px]"
+                                    className="rounded-[27.23px] filter grayscale hover:grayscale-0 transition-all duration-500 group-hover:grayscale-0 hover:border-white border-[1px] border-transparent"
                                 />
                             </motion.div>
                             <p className="text-[120px] font-geist text-opaqueGrey font-bold">INNOVATOR.</p>
