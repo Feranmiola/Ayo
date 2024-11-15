@@ -127,7 +127,7 @@ export default function Home() {
                   objectFit="cover"
                   width={142.95}
                   height={142.95}
-                  className="rounded-[27.23px] transition-all duration-800 hover:border-white border-[1px] border-transparent"
+                  className={`rounded-[27.23px] transition-all duration-800  border-[1px] ${isHovered ? 'border-white' : 'border-transparent'}`}
                 />
               </div>
             </motion.div>
