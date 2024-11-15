@@ -17,6 +17,21 @@ import Footer from '@/Components/Footer';
 export default function Blog() {
     const router = useRouter()
     const [selectedTab, setSelectedTab] = useState(1)
+    const [ishovered, setIsHovered] = useState(false)
+    const colors = ['#B4F405', '#47D1FF', '#F8B154']
+    const [hoverColor, setHoverColor] = useState('#B4F405')
+    const [prevColor, setPrevColor] = useState('')
+
+    const handleHover = () => {
+        setIsHovered(true)
+        let newColor
+        do {
+            newColor = colors[Math.floor(Math.random() * colors.length)]
+        } while (newColor === prevColor)
+        setHoverColor(newColor)
+        setPrevColor(newColor)
+    }
+
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -65,6 +80,8 @@ export default function Blog() {
                 animate="visible"
             >
                 <motion.div
+                    onMouseEnter={() => handleHover()}
+                    onMouseLeave={() => setIsHovered(false)}
                     onClick={() => router.back()}
                     className="flex flex-row cursor-pointer items-center space-x-5"
                     variants={itemVariants}
@@ -72,15 +89,22 @@ export default function Blog() {
                 >
                     <div className="h-[64px] w-[64px] rounded-[12.19px]">
                         <Image
-                            src="https://res.cloudinary.com/debiu7z1b/image/upload/v1731414210/image_904_1_hg5p3h.webp"
+                            src="https://res.cloudinary.com/debiu7z1b/image/upload/v1731661994/fimage_904_oxgxon.webp"
                             alt="Ayo's profile picture"
                             objectFit="cover"
                             width={64}
                             height={64}
-                            className="rounded-[12.19px]"
+                            className={`rounded-[12.19px]  transition-all duration-500 ${ishovered ? 'hover:grayscale-0 group-hover:grayscale-0' : 'filter grayscale'} `}
                         />
                     </div>
-                    <p className="text-[#6C6969] font-bricolage text-[36px] font-bold">Ayo</p>
+                    <p
+                        className={`font-bricolage text-[36px] font-bold`}
+                        style={{
+                            color: ishovered ? hoverColor : '#6C6969',
+                        }}
+                    >
+                        Ayo
+                    </p>
                 </motion.div>
 
                 <motion.div className='flex flex-col justify-between h-[200px]' variants={itemVariants}>
