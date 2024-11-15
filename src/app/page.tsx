@@ -14,6 +14,7 @@ import { useSticky } from "@/Components/UseSticky"
 export default function Home() {
   const [missionRef, isMissionSticky] = useSticky()
   const [ideasRef, isIdeasSticky] = useSticky()
+  const [selectedTab, setSelectedTab] = useState(1)
   const [isHovered, setIsHovered] = useState(false)
   const [hoverColor, setHoverColor] = useState('#B4F405')
   const [prevColor, setPrevColor] = useState('')
@@ -77,9 +78,65 @@ export default function Home() {
     updateScrollbar()
   }, [])
 
-  return (
-    <div className="relative w-screen bg-darkGray">
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
+  return (
+    <div className="relative w-screen flex flex-col items-center justify-center bg-darkGray">
+      <div className='w-[416px] h-[72px] rounded-[500px] flex items-center fixed z-[9999] top-10 bg-[#181818] justify-center flex-row -space-x-3'>
+        <div
+          onClick={() => {
+            setSelectedTab(1);
+            scrollToSection("Ayo");
+          }}
+          className={`flex items-center justify-center z-40 px-5 py-2 rounded-[32px] border-[1px] transition ease-in-out text-base ${selectedTab === 1
+            ? 'bg-white border-transparent font-bold text-[#181818]'
+            : 'border-[#A8A8A8] cursor-pointer font-semibold bg-[#131313] hover:text-white hover:border-white text-[#A8A8A8]'
+            }`}
+        >
+          Ayo
+        </div>
+        <div
+          onClick={() => {
+            setSelectedTab(2);
+            scrollToSection("Journey");
+          }}
+          className={`flex items-center justify-center z-30 px-5 py-2 rounded-[32px] border-[1px] transition ease-in-out text-base ${selectedTab === 2
+            ? 'bg-white border-transparent font-bold text-[#181818]'
+            : 'border-[#A8A8A8] cursor-pointer font-semibold bg-[#131313] hover:text-white hover:border-white text-[#A8A8A8]'
+            }`}
+        >
+          My Journey
+        </div>
+        <div
+          onClick={() => {
+            setSelectedTab(3);
+            scrollToSection("blog");
+          }}
+          className={`flex items-center justify-center z-20 px-5 py-2 rounded-[32px] border-[1px] transition ease-in-out text-base ${selectedTab === 3
+            ? 'bg-white border-transparent font-bold text-[#181818]'
+            : 'border-[#A8A8A8] cursor-pointer font-semibold bg-[#131313] hover:text-white hover:border-white text-[#A8A8A8]'
+            }`}
+        >
+          Blog
+        </div>
+        <div
+          onClick={() => {
+            setSelectedTab(4);
+            scrollToSection("contact");
+          }}
+          className={`flex items-center justify-center z-10 px-5 py-2 rounded-[32px] border-[1px] transition ease-in-out text-base ${selectedTab === 4
+            ? 'bg-white border-transparent font-bold text-[#181818]'
+            : 'border-[#A8A8A8] cursor-pointer font-semibold bg-[#131313] hover:text-white hover:border-white text-[#A8A8A8]'
+            }`}
+        >
+          Contact
+        </div>
+      </div>
       <motion.div
         className="w-full"
         initial="hidden"
@@ -88,7 +145,7 @@ export default function Home() {
         transition={{ duration: 1, ease: "easeOut" }}
       >
 
-        <div className="flex flex-row h-screen items-center space-x-10 justify-center py-[10rem]">
+        <div id="Ayo" className="flex flex-row h-screen items-center space-x-10 justify-center py-[10rem]">
           <p className="text-[181.52px] opacity-50 font-bricolage text-white font-bold">Hi, i'm</p>
           <div
             id="ahyoh"
@@ -155,15 +212,16 @@ export default function Home() {
 
         <Entrepreneur />
 
-        <div ref={missionRef} className={`h-screen ${isMissionSticky ? 'sticky top-0 z-10' : ''}`}>
+        <div id="Journey" ref={missionRef} className={`h-screen ${isMissionSticky ? 'sticky top-0 z-10' : ''}`}>
           <Mission />
         </div>
 
-        <div ref={ideasRef} className={`h-screen ${isIdeasSticky ? 'sticky top-0 z-20' : ''}`}>
+        <div id="blog" ref={ideasRef} className={`h-screen ${isIdeasSticky ? 'sticky top-0 z-20' : ''}`}>
           <Ideas />
         </div>
-
-        <Footer />
+        <div id="contact">
+          <Footer />
+        </div>
       </motion.div>
     </div>
   )

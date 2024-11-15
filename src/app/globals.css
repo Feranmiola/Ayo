@@ -73,6 +73,18 @@ html {
 }
 
 
+.navbar {
+  overflow: hidden;
+  z-index: 8888;
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
+  width: 100%;
+  /* Full width */
+}
+
+
 
 .missionBackground {
   background-image: url('https://res.cloudinary.com/debiu7z1b/image/upload/v1731423792/Frame_81_bkqsh4.webp');

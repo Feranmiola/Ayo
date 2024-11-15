@@ -72,8 +72,7 @@ export default function BlogPage() {
     }
 
     return (
-        <div className='flex flex-col w-full'>
-
+        <div className='flex flex-col w-full items-center justify-center'>
             <motion.div
                 className="flex flex-col bg-[#131313] space-y-20 w-screen items-center justify-center pt-10"
                 variants={containerVariants}
