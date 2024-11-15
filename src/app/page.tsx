@@ -93,15 +93,18 @@ export default function Home() {
             whileDrag={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Image
-              src="https://res.cloudinary.com/debiu7z1b/image/upload/v1731414210/image_904_1_hg5p3h.webp"
-              alt="Ayo's profile picture"
-              objectFit="cover"
-              width={142.95}
-              height={142.95}
-              className="rounded-[27.23px]"
-            />
+            <div className="relative group">
+              <Image
+                src="https://res.cloudinary.com/debiu7z1b/image/upload/v1731661994/fimage_904_oxgxon.webp"
+                alt="Ayo's profile picture"
+                objectFit="cover"
+                width={142.95}
+                height={142.95}
+                className="rounded-[27.23px] filter grayscale transition-all duration-500 group-hover:grayscale-0"
+              />
+            </div>
           </motion.div>
+
           <p className="text-[181.52px] font-bricolage text-white font-bold">Ayo</p>
         </div>
 
