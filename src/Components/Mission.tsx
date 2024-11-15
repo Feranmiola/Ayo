@@ -6,7 +6,6 @@ import { motion } from 'framer-motion'
 import MissionIcon from './Icons/MissionIcon'
 import ExploreIcon from './Icons/ExploreIcon'
 import Image from 'next/image'
-import Ideas from './Ideas'
 
 export default function Mission() {
     const containerVariants = {
