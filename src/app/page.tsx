@@ -1,8 +1,8 @@
 'use client'
 
-import { useEffect, useRef } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
-import { motion, useScroll } from "framer-motion"
+import { motion, useAnimation } from "framer-motion"
 import Entrepreneur from "@/Components/Entreprenure"
 import Mission from "@/Components/Mission"
 import Ideas from "@/Components/Ideas"
@@ -13,7 +13,34 @@ import { useSticky } from "@/Components/UseSticky"
 export default function Home() {
   const [missionRef, isMissionSticky] = useSticky()
   const [ideasRef, isIdeasSticky] = useSticky()
-  const containerRef = useRef(null)
+  const [isHovered, setIsHovered] = useState(false)
+  const [hoverColor, setHoverColor] = useState('#B4F405')
+  const [prevColor, setPrevColor] = useState('')
+  const controls = useAnimation()
+  const underlineControls = useAnimation()
+
+  const colors = ['#B4F405', '#47D1FF', '#F8B154']
+
+  useEffect(() => {
+    if (isHovered) {
+      controls.start({ y: -10, filter: 'grayscale(0)', transition: { duration: 0.3, ease: 'easeOut' } })
+      underlineControls.start({ width: '100%', transition: { duration: 0.3, ease: 'easeOut' } })
+    } else {
+      controls.start({ y: 0, filter: 'grayscale(1)', transition: { duration: 0.3, ease: 'easeOut' } })
+      underlineControls.start({ width: 0, transition: { duration: 0.3, ease: 'easeOut' } })
+    }
+  }, [isHovered, controls, underlineControls])
+
+  const handleHover = () => {
+    setIsHovered(true)
+    let newColor
+    do {
+      newColor = colors[Math.floor(Math.random() * colors.length)]
+    } while (newColor === prevColor)
+    setHoverColor(newColor)
+    setPrevColor(newColor)
+  }
+
 
   const fadeInVariants = {
     hidden: { opacity: 0 },
@@ -26,9 +53,7 @@ export default function Home() {
     if (typeof window === "undefined") return
 
     let scrollTimer = 0
-    let currentScrollPosition = 0
     let targetScrollPosition = 0
-    let animationFrameId: number | null = null
 
     function updateScrollbar() {
       const scrollPercentage = targetScrollPosition / (document.documentElement.scrollHeight - window.innerHeight)
@@ -46,21 +71,6 @@ export default function Home() {
       }, 1000) as unknown as number
     }
 
-    function smoothScroll() {
-      currentScrollPosition += (targetScrollPosition - currentScrollPosition) * 0.1
-      if (Math.abs(targetScrollPosition - currentScrollPosition) < 1) {
-        currentScrollPosition = targetScrollPosition
-        if (animationFrameId) cancelAnimationFrame(animationFrameId)
-      } else {
-        animationFrameId = requestAnimationFrame(smoothScroll)
-      }
-      window.scrollTo(0, currentScrollPosition)
-      updateScrollbar()
-    }
-
-
-
-
     window.addEventListener('resize', updateScrollbar)
 
     updateScrollbar()
@@ -76,13 +86,24 @@ export default function Home() {
         variants={fadeInVariants}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        {/* Hero Section */}
+
         <div className="flex flex-row h-screen items-center space-x-10 justify-center py-[10rem]">
           <p className="text-[181.52px] opacity-50 font-bricolage text-white font-bold">Hi, i'm</p>
-          <div className="flex relative flex-row items-center">
-            <div className="absolute flex items-center justify-center top-0 right-[16rem] h-[40px] w-[97px] rounded-[12px] bg-[#262626] text-[#B4F405] font-geist text-base">
+          <div
+            id="ahyoh"
+            className="flex relative flex-row items-center"
+            onMouseEnter={handleHover}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              className="absolute flex items-center justify-center -top-10 right-[16rem] h-[40px] w-[97px] rounded-[12px] bg-[#262626]"
+              style={{ color: hoverColor }}
+            >
               /aah-yoh/
-            </div>
+            </motion.div>
             <motion.div
               className="h-[142.95px] w-[142.95px] rounded-[27.23px] cursor-grab active:cursor-grabbing"
               drag
@@ -96,6 +117,7 @@ export default function Home() {
               dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
               whileDrag={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
+              animate={controls}
             >
               <div className="relative group">
                 <Image
@@ -104,12 +126,29 @@ export default function Home() {
                   objectFit="cover"
                   width={142.95}
                   height={142.95}
-                  className="rounded-[27.23px] filter grayscale transition-all duration-500 group-hover:grayscale-0 hover:border-white border-[1px] border-transparent "
+                  className="rounded-[27.23px] transition-all duration-800 hover:border-white border-[1px] border-transparent"
                 />
               </div>
             </motion.div>
 
-            <p className="text-[181.52px] pl-10 font-bricolage text-white font-bold">Ayo</p>
+            <div className="relative pl-10">
+              <div className="relative inline-block">
+                <motion.p
+                  className="text-[181.52px] font-bricolage font-bold leading-none"
+                  animate={{ color: isHovered ? hoverColor : 'white' }}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                >
+                  Ayo
+                </motion.p>
+                <motion.div
+                  className="absolute bottom-[10px] left-0 h-[5px] w-full origin-left"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: isHovered ? 1 : 0 }}
+                  transition={{ duration: 0.5, ease: 'easeOut' }}
+                  style={{ backgroundColor: hoverColor }}
+                />
+              </div>
+            </div>
           </div>
         </div>
 
