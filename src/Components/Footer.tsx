@@ -117,7 +117,7 @@ export default function Footer() {
                     </div>
                 </motion.div>
                 <motion.div className='w-full md:w-[90%] lg:w-[1222px] flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-3 justify-center md:justify-start' variants={itemVariants}>
-                    <motion.p
+                    {/* <motion.p
                         className='text-white hover:underline transition ease-in-out underline-offset-2 cursor-pointer font-geist text-base md:text-xl'
                         whileHover={{
                             scale: 1.05,
@@ -136,7 +136,7 @@ export default function Footer() {
                     >
                         Terms of Use
                     </motion.p>
-                    <div className='hidden md:block rounded-full w-[3px] h-[3px] bg-opaqueGrey'></div>
+                    <div className='hidden md:block rounded-full w-[3px] h-[3px] bg-opaqueGrey'></div> */}
                     <p className='text-opaqueGrey font-geist text-base md:text-xl text-center md:text-left'>Copyright © 2024 All Rights Reserved.</p>
                 </motion.div>
             </motion.div>
