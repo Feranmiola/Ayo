@@ -203,7 +203,9 @@ export default function Blog() {
                             <PulseLoader color="#B4F405" />
                         </div>
                     ) : (
-                        <motion.div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 pb-5 sm:pb-7 md:pb-10 items-center justify-center w-full" variants={itemVariants}>
+                        <>
+                        {filteredArticles.length > 0 ? (
+                            <motion.div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 pb-5 sm:pb-7 md:pb-10 items-center justify-center w-full" variants={itemVariants}>
                             {filteredArticles.map((article) => {
                                 const Icon = categoryIcons[article.tags] || FallbackIcon
                                 return (
@@ -228,6 +230,12 @@ export default function Blog() {
                                 )
                             })}
                         </motion.div>
+                        ): (
+                            <div className='w-full flex items-center justify-center text-[#F8B154] text-base font-geist'>
+                            No Articles Found
+                        </div>
+                        )}
+                        </>
                     )}
                 </motion.div>
             </motion.div>
