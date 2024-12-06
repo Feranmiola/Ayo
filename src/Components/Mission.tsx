@@ -70,7 +70,7 @@ export default function Mission() {
                     className="w-full lg:w-auto"
                 >
                     <Image
-                        src="https://res.cloudinary.com/debiu7z1b/image/upload/v1731740245/Variant2_vja71d.webp"
+                        src="https://res.cloudinary.com/debiu7z1b/image/upload/v1733519583/Variant22_fmoezc.webp"
                         alt="Mission Image"
                         width={626}
                         height={805}
