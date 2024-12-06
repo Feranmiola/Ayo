@@ -119,7 +119,7 @@ export default function Home() {
       <SEO
         title="AYO"
         description=""
-        canonical="https://ayo-gamma.vercel.app/"
+        canonical="httpS://ayo.ceo"
         ogImage=""
         ogType="website"
         twitterHandle=""
