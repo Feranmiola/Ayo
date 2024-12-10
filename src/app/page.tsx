@@ -224,7 +224,7 @@ export default function Home() {
             >
               <div className="relative group">
                 <Image
-                  src="https://res.cloudinary.com/debiu7z1b/image/upload/v1731661994/fimage_904_oxgxon.webp"
+                  src="https://res.cloudinary.com/debiu7z1b/image/upload/v1733839008/WhatsApp_Image_2024-12-10_at_13.59.19_2005dc79_vmqvdh.webp"
                   alt="Ayo's profile picture"
                   objectFit="cover"
                   width={142.95}

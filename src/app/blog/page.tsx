@@ -134,7 +134,7 @@ export default function Blog() {
                 >
                     <div className="h-[48px] w-[48px] sm:h-[56px] sm:w-[56px] md:h-[64px] md:w-[64px] rounded-[12.19px]">
                         <Image
-                            src="https://res.cloudinary.com/debiu7z1b/image/upload/v1731661994/fimage_904_oxgxon.webp"
+                            src="https://res.cloudinary.com/debiu7z1b/image/upload/v1733839008/WhatsApp_Image_2024-12-10_at_13.59.19_2005dc79_vmqvdh.webp"
                             alt="Ayo's profile picture"
                             objectFit="cover"
                             width={64}
