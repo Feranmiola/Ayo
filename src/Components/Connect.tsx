@@ -87,7 +87,7 @@ const Connect = () => {
     {
       name: "Medium",
       icon: <MediumIcon />,
-      url: "https://medium.com/",
+      url: "https://medium.com/@ayo.ceo",
     },
   ];
 
