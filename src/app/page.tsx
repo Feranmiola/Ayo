@@ -117,8 +117,8 @@ export default function Home() {
   return (
     <div className="relative w-screen flex flex-col items-center justify-center bg-darkGray">
       <SEO
-        title="AYO"
-        description=""
+        title="Ayo | Innovator, Technologist, and Visionary"
+        description="Welcome to Ayo’s official website. Explore insights, projects, and expertise in technology, innovation, and creative problem-solving. Discover how Ayo is shaping the future with passion and purpose."
         canonical="httpS://ayo.ceo"
         ogImage=""
         ogType="website"
