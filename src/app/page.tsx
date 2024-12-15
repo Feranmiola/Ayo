@@ -120,7 +120,7 @@ export default function Home() {
         title="Ayo | Innovator, Technologist, and Visionary"
         description="Welcome to Ayo’s official website. Explore insights, projects, and expertise in technology, innovation, and creative problem-solving. Discover how Ayo is shaping the future with passion and purpose."
         canonical="httpS://ayo.ceo"
-        ogImage=""
+        ogImage="https://res.cloudinary.com/debiu7z1b/image/upload/v1734305183/WhatsApp_Image_2024-12-10_at_13.59.21_3c90251f_1_vfgiw5.webp"
         ogType="website"
         twitterHandle=""
       />
