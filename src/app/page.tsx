@@ -119,7 +119,7 @@ export default function Home() {
       <SEO
         title="Ayo | Innovator, Technologist, and Visionary"
         description="Welcome to Ayo’s official website. Explore insights, projects, and expertise in technology, innovation, and creative problem-solving. Discover how Ayo is shaping the future with passion and purpose."
-        canonical="httpS://ayo.ceo"
+        canonical="httpS://ayo.ceo/"
         ogImage="https://res.cloudinary.com/debiu7z1b/image/upload/v1734305183/WhatsApp_Image_2024-12-10_at_13.59.21_3c90251f_1_vfgiw5.webp"
         ogType="website"
         twitterHandle=""
@@ -224,7 +224,8 @@ export default function Home() {
             >
               <div className="relative group">
                 <Image
-                  src="https://res.cloudinary.com/debiu7z1b/image/upload/v1733839008/WhatsApp_Image_2024-12-10_at_13.59.19_2005dc79_vmqvdh.webp"
+                  // src="https://res.cloudinary.com/debiu7z1b/image/upload/v1733839008/WhatsApp_Image_2024-12-10_at_13.59.19_2005dc79_vmqvdh.webp"
+                  src = "https://res.cloudinary.com/debiu7z1b/image/upload/v1734341517/WhatsApp_Image_2024-12-10_at_13.59.35_25c8dfc4_wkjyif.webp"
                   alt="Ayo's profile picture"
                   objectFit="cover"
                   width={142.95}

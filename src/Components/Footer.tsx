@@ -88,7 +88,8 @@ export default function Footer() {
                                 }}
                             >
                                 <Image
-                                    src="https://res.cloudinary.com/debiu7z1b/image/upload/v1733839008/WhatsApp_Image_2024-12-10_at_13.59.19_2005dc79_vmqvdh.webp"
+                                    // src="https://res.cloudinary.com/debiu7z1b/image/upload/v1733839008/WhatsApp_Image_2024-12-10_at_13.59.19_2005dc79_vmqvdh.webp"
+                                    src="https://res.cloudinary.com/debiu7z1b/image/upload/v1734341517/WhatsApp_Image_2024-12-10_at_13.59.35_25c8dfc4_wkjyif.webp"
                                     alt="Ayo's profile picture"
                                     objectFit="cover"
                                     width={104}
